@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="media-list">
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" ng-src="{{userData.fbPicture()}}" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{userData.fbName()}}</h4>
+                    {{messageData.content.message}}
+                </div>
+
+
+
+                <ul>
+                    <li class="media" data-ng-repeat="messageComment in messageData.children">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" ng-src="{{'//graph.facebok.com/'+messageComment.user.FBUserID+'/picture/'}}" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{messageComment.user.name}}</h4>
+                            {{messageComment.content.message}}
+                        </div>
+                    </li>
+                </ul>
+
+
+            </li>
+        </ul>
+    </div>
+</div>
